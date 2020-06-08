@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome Flask App</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+	<link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+</head>
+
+<h1>This is my root page!</h1>
+
+<body>
+	<div>
+		<p>Please enter your name:</p>
+		<form class="pure-form" method="POST" action="/">
+			Name:<br>
+			<input type="text" name="username"><br>
+			Favorite food:<br>
+			<input type="text" name="userfood"><br>
+
+			<button type="submit" class="pure-button pure-button-primary" value="Submit">Submit</button>
+		</form>
+	</div>
+
+	<div>
+		{% if name %}
+			<p>Welcome to my site {{ name }}!</p>
+			<p>Your favorite food is {{ food }}</p>
+		{% endif %}
+	</div>
+</body>
+</html>
